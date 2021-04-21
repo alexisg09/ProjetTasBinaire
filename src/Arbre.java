@@ -98,4 +98,15 @@ public class Arbre {
     public void modifieValeur(Noeud N, Valeur d) {
         N.valeur = d;
     }
+
+    public void afficherArbre(){
+        boolean fin = false;
+        while(fin != true) {
+            System.out.println("allo");
+        }
+    }
+
+    public void afficherArbreFichier(String s) {
+
+    }
 }
