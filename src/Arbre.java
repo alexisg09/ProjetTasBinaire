@@ -14,6 +14,7 @@ public class Arbre {
      * @param d une donnée instanciée.
      */
     public Arbre(Valeur d) {
+
         this.myRacine = new Noeud(d, null, null);
     }
 
@@ -29,7 +30,7 @@ public class Arbre {
      *           servir après, car il est intégré à l'arbre créé.
      */
     public Arbre(Valeur d, Arbre AG, Arbre AD) {
-        this.myRacine = new Noeud(d, AG.racine(), AD.racine());
+        this.myRacine = new Noeud(d, AG, AD);
     }
 
     /**
@@ -44,7 +45,7 @@ public class Arbre {
      * @return le noeud fils gauche du noeud N (éventuellement NULL si N n'avait
      * pas de fils gauche).
      */
-    public Noeud gauche(Noeud N) {
+    public Arbre gauche(Noeud N) {
         return N.getGauche();
     }
 
@@ -53,7 +54,7 @@ public class Arbre {
      * @return le noeud fils droit du noeud N (éventuellement NULL si N n'avait
      * pas de fils droit).
      */
-    public Noeud droit(Noeud N) {
+    public Arbre droit(Noeud N) {
         return N.getDroite();
     }
 
@@ -65,7 +66,7 @@ public class Arbre {
      * @param SG le nouveau sous-arbre, éventuellement vide ou réduit à un noeud.
      */
     public void modifieGauche(Noeud N, Arbre SG) {
-        N.gauche = SG.racine();
+        N.gauche = SG;
     }
 
     /**
@@ -76,7 +77,7 @@ public class Arbre {
      * @param SG le nouveau sous-arbre, éventuellement vide ou réduit à un noeud.
      */
     public void modifieDroit(Noeud N, Arbre SG) {
-        N.droite = SG.racine();
+        N.droite = SG;
     }
 
     /**
@@ -99,14 +100,5 @@ public class Arbre {
         N.valeur = d;
     }
 
-    public void afficherArbre(){
-        boolean fin = false;
-        while(fin != true) {
-            System.out.println("allo");
-        }
-    }
 
-    public void afficherArbreFichier(String s) {
-
-    }
 }
